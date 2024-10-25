@@ -1,53 +1,44 @@
-# Sistema de Automação e-Gate
+# e-Gate Automation System
 
-Este projeto foi desenvolvido para automatizar o envio de dados de documentos a partir de uma planilha Excel diretamente para o sistema e-Gate. A solução integra automação com Selenium para preencher formulários na web, removendo a necessidade de inserção manual e garantindo maior eficiência no processo.
+This project was developed to automate the transfer of document data from an Excel spreadsheet directly to the e-Gate system. The solution integrates Selenium automation to complete web forms, eliminating the need for manual data entry and ensuring greater process efficiency.
 
+**KEY FEATURES**
 
-FUNCIONALIDADES PRINCIPAIS
+1. **Automated Authentication**  
+   The system automatically logs into the e-Gate portal, entering predefined credentials and authenticating system access. Selenium WebDriver ensures precise execution of the automation.
 
-1. Autenticação Automatizada
-O sistema realiza o login no portal e-Gate de forma automática, inserindo as credenciais pré-definidas e autenticando o acesso ao sistema. O uso do Selenium WebDriver garante a execução precisa da automação.
+2. **Data Transfer from Excel to e-Gate**  
+   The system reads document data from an Excel sheet and automatically populates the corresponding fields in e-Gate’s web form. This includes document number, issue date, amount, and due date, submitted row-by-row based on user selection.
 
-2. Envio de Dados do Excel para o e-Gate
-A partir de uma planilha Excel, o sistema lê os dados de documentos e preenche automaticamente os campos correspondentes no formulário web do e-Gate. Isso inclui o número do documento, data de emissão, valor e data de vencimento, que são enviados linha a linha conforme a seleção do usuário.
+3. **Removal of Read-Only Fields**  
+   Before submitting data, the system removes the "readonly" attribute from e-Gate form fields, enabling data entry for fields that would otherwise be non-editable.
 
-3. Remoção de Campos Read-Only
-Antes de enviar os dados, o sistema remove o atributo "readonly" dos campos de formulário no e-Gate, permitindo a inserção de informações que, de outra forma, não poderiam ser modificadas.
+4. **Graphical Interface with Tkinter**  
+   The graphical interface is built with Tkinter, allowing for user-friendly interaction. Users can select an Excel file, set the row range for submission, authenticate login, and view results directly in the application.
 
-4. Interface Gráfica com Tkinter
-A interface gráfica foi construída utilizando a biblioteca Tkinter, permitindo uma interação amigável para o usuário, onde ele pode selecionar a planilha Excel, definir o intervalo de linhas a ser enviado, autenticar o login e visualizar os resultados diretamente na aplicação.
+5. **Excel File Selection**  
+   The system includes a file selection feature, allowing users to choose the Excel sheet from which data will be extracted. Only .xlsx files are permitted, ensuring compatibility with the automation.
 
-5. Seleção de Arquivo Excel
-O sistema oferece uma funcionalidade de seleção de arquivo para que o usuário escolha a planilha Excel de onde os dados serão extraídos. Apenas arquivos .xlsx são permitidos, garantindo compatibilidade com a automação.
+6. **Results Display**  
+   After data submission, the system shows a window with a detailed log of operations, including successful submissions for each row and any errors that occurred during the process.
 
-6. Exibição de Resultados
-Após o envio dos dados, o sistema exibe uma janela com o log detalhado das operações, incluindo o sucesso do envio de cada linha e possíveis erros que ocorreram durante o processo.
+**TECHNOLOGIES USED**
 
+1. **Python**: Main language used for back-end and automation development.
+2. **Tkinter**: Library for creating the graphical interface, providing a user-friendly experience.
+3. **Selenium**: Used to automate web interactions, such as login, form filling, and button clicks.
+4. **Pandas**: Library used for reading and handling data from Excel sheets, ensuring efficient processing.
+5. **Openpyxl**: Used for reading Excel files and extracting document data precisely.
+6. **Chrome WebDriver**: Automation is conducted via Selenium, utilizing Chrome browser to access the e-Gate system.
 
-TECNOLOGIAS UTILIZADAS
+**HOW IT WORKS**
 
-1. Python: Linguagem principal utilizada para o desenvolvimento do back-end e da automação.
+1. The user launches the system and selects the Excel sheet containing document data.
+2. Through the interface, the user specifies the range of rows to be submitted to e-Gate.
+3. The system automatically logs in, accessing the e-Gate portal.
+4. Data from Excel is filled into the form fields and submitted to the system.
+5. After the process completes, the system displays a log with the results of each submission.
 
-2. Tkinter: Biblioteca para criação da interface gráfica, proporcionando uma experiência amigável para o usuário.
+**CONCLUSION**
 
-3. Selenium: Utilizado para automação de interação com a web, como login, preenchimento de formulários e cliques em botões.
-
-4. Pandas: Biblioteca utilizada para a leitura e manipulação de dados da planilha Excel, garantindo eficiência no processamento.
-
-5. Openpyxl: Utilizada para a leitura de arquivos Excel, extraindo os dados de documentos de forma precisa.
-
-6. WebDriver Chrome: Automação realizada via Selenium, utilizando o navegador Chrome para acessar o sistema e-Gate.
-
-
-COMO FUNCIONA
-
-O usuário inicia o sistema e seleciona a planilha Excel contendo os dados dos documentos.
-Através da interface, o usuário define o intervalo de linhas que deseja enviar para o e-Gate.
-O sistema autentica o login automaticamente, acessando o portal e-Gate.
-Os dados do Excel são inseridos nos campos do formulário e enviados ao sistema.
-Ao final do processo, o sistema exibe um log com os resultados de cada envio.
-
-
-CONCLUSÃO
-
-Este projeto entrega uma solução robusta para a automação de envio de dados do Excel para o sistema e-Gate, eliminando o trabalho manual e reduzindo o risco de erros na inserção de dados. A combinação de tecnologias como Selenium, Pandas e Tkinter garante uma automação eficiente e fácil de usar, aumentando a produtividade e precisão no envio de informações.
+This project provides a robust solution for automating data transfer from Excel to the e-Gate system, removing manual work and reducing data entry errors. The combination of technologies like Selenium, Pandas, and Tkinter ensures efficient and easy-to-use automation, increasing productivity and accuracy in information submission.
